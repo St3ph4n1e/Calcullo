@@ -97,7 +97,7 @@ public class CalculGenerator {
 
     public static CalculList generateEasyCalculList() {
         CalculList list = new CalculList();
-        for (int i = 0; i < NUM_EASY_CALCULS; i++) {
+        for (int i = 0; i <= NUM_EASY_CALCULS; i++) {
             list.add(easyCalcul());
         }
         return list;
@@ -105,7 +105,7 @@ public class CalculGenerator {
 
     public static CalculList generateMediumCalculList() {
         CalculList list = new CalculList();
-        for (int i = 0; i < NUM_MEDIUM_CALCULS; i++) {
+        for (int i = 0; i <= NUM_MEDIUM_CALCULS; i++) {
             list.add(mediumCalcul());
         }
         return list;
@@ -113,7 +113,7 @@ public class CalculGenerator {
 
     public static CalculList generateDifficultCalculList() {
         CalculList list = new CalculList();
-        for (int i = 0; i < NUM_DIFFICULT_CALCULS; i++) {
+        for (int i = 0; i <= NUM_DIFFICULT_CALCULS; i++) {
             list.add(difficultCalcul());
         }
         return list;
@@ -121,7 +121,7 @@ public class CalculGenerator {
 
     public static CalculList generateSoDifficultCalculList() {
         CalculList list = new CalculList();
-        for (int i = 0; i < NUM_DIFFICULT_CALCULS;) {
+        for (int i = 0; i <= NUM_DIFFICULT_CALCULS;) {
             list.add(difficultCalcul());
             i++;
             list.add(mediumCalcul());
