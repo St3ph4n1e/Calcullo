@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -27,5 +28,16 @@ public class ResultActivity extends AppCompatActivity {
         String score = "Score :\n \n" +result + "/" + size;
 
         resultTextView.setText(score);
+
+        resultButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResultActivity.this, StartActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
+
 }
