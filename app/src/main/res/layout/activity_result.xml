@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/peach"
+    tools:context=".ResultActivity">
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="280dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="88dp"
+        android:background="#65FFEB3B"
+        android:backgroundTint="#A1FFFFFF"
+        android:fontFamily="@font/bungee_inline"
+        android:gravity="center"
+        android:shadowColor="#E8FF5722"
+        android:text="Result"
+        android:textColor="#E9FFFFFF"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/resultImageView"
+        android:layout_width="337dp"
+        android:layout_height="427dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855"
+        app:srcCompat="@drawable/calcullooo" />
+
+    <Button
+        android:id="@+id/resultButton"
+        android:layout_width="188dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="52dp"
+        android:fontFamily="@font/bungee_inline"
+        android:text="Button"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/resultImageView"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/resultImageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

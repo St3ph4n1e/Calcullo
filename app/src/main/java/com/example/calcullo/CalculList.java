@@ -51,15 +51,18 @@ public class CalculList implements Parcelable {
     };
 
     public Calcul getNextCalcul() {
-        if (currentCalculIndex >= calculs.size()) {
-            currentCalculIndex = 0;
-        }
+
+       if (currentCalculIndex >= calculs.size()) {
+          return null;
+       }
 
         Calcul nextCalcul = calculs.get(currentCalculIndex);
         currentCalculIndex++;
 
         return nextCalcul;
     }
+
+
 
 
 }
