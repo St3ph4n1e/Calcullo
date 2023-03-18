@@ -6,12 +6,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class StartActivity extends AppCompatActivity implements View.OnClickListener  {
 
-    Calcul calcul;
+    CalculList easy = CalculGenerator.generateEasyCalculList();
+    CalculList medium = CalculGenerator.generateMediumCalculList();
+    CalculList difficult = CalculGenerator.generateDifficultCalculList();
+
+    CalculList melange = CalculGenerator.generateSoDifficultCalculList();
 
     Button startButton;
 
@@ -23,8 +32,6 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         startButton = findViewById(R.id.startButton);
         startButton.setOnClickListener(this);
 
-
-
     }
 
     @Override
@@ -35,13 +42,11 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-
-
     private void showDifficultyDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Choisissez la difficulté");
 
-        String[] difficultyLevels = {"Facile", "Moyen", "Difficile"};
+        String[] difficultyLevels = {"Facile", "Moyen", "Difficile","Un peu de tout"};
 
         builder.setItems(difficultyLevels, new DialogInterface.OnClickListener() {
             @Override
@@ -52,28 +57,30 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
                 switch (which) {
                     case 0:
-                        calcul = CalculGenerator.easyCalcul();
-
-
+                        easy.getNextCalcul();
+                        intent.putExtra("Calculs", easy);
                         break;
+
                     case 1:
-                        calcul = CalculGenerator.mediumCalcul();
-
-
+                        medium.getNextCalcul();
+                        intent.putExtra("Calculs", medium);
                         break;
+
                     case 2:
-                        calcul = CalculGenerator.difficultCalcul();
+                        difficult.getNextCalcul();
+                        intent.putExtra("Calculs", difficult);
+                        break;
 
-
+                    case 3:
+                        melange.getNextCalcul();
+                        intent.putExtra("Calculs", melange);
                         break;
                     default:
 
                         break;
                 }
 
-                intent.putExtra("calcul", calcul);
                 startActivity(intent);
-
             }
         });
         builder.show();

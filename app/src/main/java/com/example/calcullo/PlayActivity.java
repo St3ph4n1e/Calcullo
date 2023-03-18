@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class PlayActivity extends AppCompatActivity {
 
     TextView questionTextView;
@@ -17,7 +19,12 @@ public class PlayActivity extends AppCompatActivity {
     Button answerButton3;
     Button answerButton4;
 
+    CalculList mCalculList;
     Calcul mCalcul;
+
+
+
+
 
     enum CalculState {
         NOT_ANSWERED,
@@ -41,7 +48,8 @@ public class PlayActivity extends AppCompatActivity {
 
         // Récupération du calcul depuis StartActivity :
         Intent srcIntent = getIntent();
-        mCalcul = srcIntent.getParcelableExtra("calcul");
+        mCalculList = srcIntent.getParcelableExtra("Calculs");
+        mCalcul = mCalculList.getNextCalcul();
 
         playCalcul();
     }
