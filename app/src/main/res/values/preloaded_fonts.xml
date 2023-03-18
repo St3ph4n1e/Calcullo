@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/abril_fatface</item>
+        <item>@font/bangers</item>
+        <item>@font/bungee_inline</item>
+        <item>@font/diplomata</item>
+        <item>@font/peralta</item>
+        <item>@font/slackey</item>
+    </array>
+</resources>

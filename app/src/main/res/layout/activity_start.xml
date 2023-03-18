@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/peach"
+    tools:context=".StartActivity">
+
+    <ImageView
+        android:id="@+id/startImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497"
+        app:srcCompat="@drawable/calcullo" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="208dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="20dp"
+        android:text="Commencer"
+        android:textColor="#FAF8F4"
+        app:layout_constraintBottom_toBottomOf="@+id/startImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/startTextView"
+        android:layout_width="407dp"
+        android:layout_height="85dp"
+        android:background="#8AFFEB3B"
+        android:fontFamily="@font/slackey"
+        android:gravity="center"
+        android:text="Calcullo"
+        android:textAlignment="center"
+        android:textColor="#5262B8"
+        android:textSize="48sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/startImageView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
