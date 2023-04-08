@@ -63,6 +63,15 @@ public class CalculList implements Parcelable {
     }
 
 
+    public Calcul getPreviousCalcul() {
+        if (currentCalculIndex <= 0) {
+            return null;
+        }
 
+        currentCalculIndex--;
+        Calcul previousCalcul = calculs.get(currentCalculIndex-1);
+
+        return previousCalcul;
+    }
 
 }

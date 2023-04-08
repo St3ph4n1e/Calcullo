@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,18 +23,15 @@ public class PlayActivity extends AppCompatActivity {
     Button answerButton2;
     Button answerButton3;
     Button answerButton4;
+
+    ImageButton left;
+    ImageButton right;
     CalculList mCalculList;
     Calcul mCalcul;
     int goodAnswers = 0;
 
 
 
-    enum CalculState {
-        NOT_ANSWERED,
-        NEXT_QUESTION,
-        RESULTS,
-
-    }
 
 
     @Override
@@ -46,6 +44,8 @@ public class PlayActivity extends AppCompatActivity {
         answerButton2 = findViewById(R.id.answerButton2);
         answerButton3 = findViewById(R.id.answerButton3);
         answerButton4 = findViewById(R.id.answerButton4);
+        left = findViewById(R.id.LeftImageButton);
+        right = findViewById(R.id.RightImageButton);
 
 
         Button[] answersButtons = {answerButton1, answerButton2, answerButton3, answerButton4};
@@ -58,7 +58,33 @@ public class PlayActivity extends AppCompatActivity {
 
         setAnswerButtonsOnClickListener();
         playCalcul();
+
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calcul previousCalcul = mCalculList.getPreviousCalcul();
+                if (previousCalcul != null) {
+                    mCalcul = previousCalcul;
+                    playCalcul();
+                }
+            }
+        });
+
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calcul nextCalcul = mCalculList.getNextCalcul();
+                if (nextCalcul != null) {
+                    mCalcul = nextCalcul;
+                    playCalcul();
+                }
+            }
+        });
+
+
     }
+
+
 
 
     private void setAnswerButtonsOnClickListener() {
@@ -76,7 +102,7 @@ public class PlayActivity extends AppCompatActivity {
                     goodAnswers ++;
                     // Si la réponse est correcte, changer la couleur du bouton en vert
                     clickedButton.setBackgroundColor(Color.GREEN);
-                    // Affichez un message de bonne réponse
+                    // Afficher un message de bonne réponse
                     Toast.makeText(PlayActivity.this, "Bonne réponse !", Toast.LENGTH_SHORT).show();
                 } else {
                     // Si la réponse est incorrecte, changer la couleur du bouton en rouge
