@@ -115,7 +115,7 @@ public class PlayActivity extends AppCompatActivity {
                         }
                     }
                     // Afficher un message de mauvaise réponse
-                    Toast.makeText(PlayActivity.this, "Mauvaise réponse !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PlayActivity.this, "Mauvaise réponse ! \n"+correctAnswer+" est la bonne réponse", Toast.LENGTH_SHORT).show();
                 }
 
                 // Mettre une tempo d'1 seconde avant de réinitialiser la couleur des boutons
